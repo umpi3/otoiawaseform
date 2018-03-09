@@ -14,13 +14,13 @@ $content = $_POST [ 'content' ];
 if ( $nickname == '' ) {
 echo 'ニックネームが入力されていません。' ;
 } else {
-echo 'ようこそ、' . $nickname . '様' ;
+echo 'ようこそ、' . $nickname . '様<br>' ;
 }
 // メールアドレス
 if ( $email == '' ) {
 echo 'メールアドレスが入力されていません。' ;
 } else {
-echo 'メールアドレス：' . $email ;
+echo 'メールアドレス：' . $email.'<br>' ;
 }
 // お問い合わせ内容
 if ( $content == '' ) {
@@ -29,8 +29,14 @@ echo 'お問い合わせ内容が入力されていません。' ;
 echo 'お問い合わせ内容：' . $content ;
 }
 ?>
-<form method="POST" action="">
-<input type="button" value="戻る" onclick="history.back()">
-</form>
+<form method="post" action ="thanks.php">
+<input type="hidden" name="nickname" value="<?php echo $nickname; ?>" >
+<input type="hidden" name="email" value="<?php echo $email; ?>" >
+<input type="hidden" name="content" value="<?php echo $content; ?>" >
+<input type="button" onclick="history.back()" value="戻る" >
+<?php if($nickname != '' && $email != '' && $content != ''): ?>
+<input type="submit" value="OK" >
+<?php endif; ?>
+</form >
 </body>
 </html>
