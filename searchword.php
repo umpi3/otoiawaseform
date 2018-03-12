@@ -56,13 +56,14 @@ $survey_line[]=$rec;
 		<?php echo $rec["content"]; ?><br>
 		<?php echo $rec["created"]; ?><br>
 	<?php }?> -->
+<?php if(isset($survey_line)){ ?>
 <?php foreach($survey_line as $one_otoiawase): ?>
 <?php echo $one_otoiawase["id"]; ?><br>
 <?php echo $one_otoiawase["nick"]; ?><br>
 <?php echo $one_otoiawase["email"]; ?><br>
 <?php echo $one_otoiawase["content"]; ?><br>
 <?php echo $one_otoiawase["created"]; ?><br>
-
 <?php endforeach ?>
+<?php }?>
 </body>
 </html>
